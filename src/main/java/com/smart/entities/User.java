@@ -36,7 +36,7 @@ public class User {
 	private String about;
 	
 	// OneToMany --> one user can have many contacts
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user") 	// cascade ALL means we want to delete all info related to specific user 
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user", orphanRemoval = true) 	// cascade ALL means we want to delete all info related to specific user 
 	private List<Contact> contacts = new ArrayList<>();
 
 	public User() {
